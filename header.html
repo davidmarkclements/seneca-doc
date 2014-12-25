@@ -1,0 +1,16 @@
+<html>
+<head>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div style="width:36em;margin:2em auto;">
+<p>dr-mark test case with seneca docs</p>
+<p>to replicate:</p>
+<div><pre>
+git clone https://github.com/davidmarkclements/seneca-doc
+cd seneca-doc
+sudo npm -g install dr-mark
+dr --styles &gt; styles.css
+dr --head header.html --foot footer.html test.md &gt; test.html
+</pre></div>
+</div>
