@@ -1,0 +1,44 @@
+<html>
+<head>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div style="width:36em;margin:2em auto;">
+<p>dr-mark test case with seneca docs</p>
+<p>to replicate:</p>
+<div><pre>
+git clone https://github.com/davidmarkclements/seneca-doc
+cd seneca-doc
+sudo npm -g install dr-mark
+dr --styles &gt; styles.css
+dr --head header.html --foot footer.html test.md &gt; test.html
+</pre></div>
+</div> <section id="api">
+    <ul>
+        <li><span class="method">use <span class="params">name options </span></span><span class="synopsis">Register a plugin. The plugin will usually add some actions to the Seneca instance. You can optionally provide some options for the plugin (for example, database connection details</span></span>
+        </li>
+        <li><span class="method">ready <span class="params">ready </span></span><span class="synopsis">Provide a callback to be executed once all the plugins registered up this point are initialized. You use this to wait for database connections to establish.</span></span>
+        </li>
+        <li><span class="method">add <span class="params">pattern action </span></span><span class="synopsis">Add a new action to the Seneca instance. The action is triggered when an object matching the pattern is submitted to Seneca using the act method.</span></span>
+        </li>
+        <li><span class="method">act <span class="params">object callback </span></span><span class="synopsis">Invoke an action using an object. The action pattern that matches the object in the most specific manner will be invoked.</span></span>
+        </li>
+        <li><span class="method">make <span class="params">entity-canon properties </span></span><span class="synopsis">Create an instance of a data entity. The entity-canon defines the kind of entity to create (&#39;product&#39;, &#39;sys/user&#39;,...) and the properties (optional)
+define the values of some of the entity fields.</span></span>
+        </li>
+        <li><span class="method">export <span class="params">name </span></span><span class="synopsis">Returns a reference to a named object. These are provided by some plugins so that you can integrate into other systems (for example, providing a middleware function for express)</span></span>
+        </li>
+        <li><span class="method">log.level <span class="params">[ entry ... ]</span></span><span class="synopsis">Create a log entry using the Seneca logging system. Use this inside plugins as it handles all the context information (time, which plugin, etc) for you. Levels are debug, info, warn, error, fatal.</span></span>
+        </li>
+        <li><span class="method">pin <span class="params">pin-pattern </span></span><span class="synopsis">Creates a convenience object that can call actions directly using method calls.</span></span>
+        </li>
+        <li><span class="method">close <span class="params">done </span></span><span class="synopsis">Calls the close:name action on all plugins that have registered this action. You can use this to close database connections after tests complete to ensure the process ends.</span></span>
+        </li>
+        <li><span class="method">client <span class="params">options </span></span><span class="synopsis">Calls the role:transport,cmd:client action from the transport plugin.</span></span>
+        </li>
+        <li><span class="method">listen <span class="params">options </span></span><span class="synopsis">Calls the role:transport,cmd:listen action from the transport plugin.</span>
+        </li>
+    </ul>
+</section> 
+</body>
+</html>
