@@ -10,3 +10,5 @@ sudo npm -g install dr-mark
 dr --styles > styles.css
 dr --head header.html --foot footer.html test.md > test.html
 ```
+
+<https://davidmarkclements.gitub.io/seneca-doc> should show the result
